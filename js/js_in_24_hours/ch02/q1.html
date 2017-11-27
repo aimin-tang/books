@@ -1,0 +1,15 @@
+<html>
+    <head>
+    <title>click image</title>
+    </head>
+
+    <body>
+    <img id="imageID" src="image1.png" onclick="this.title='My New Title';" />
+    <script>
+        var element = document.getElementById("imageID");
+        element.addEventListener("click",function(){
+            alert(element.title);
+        })
+    </script>
+    <body>
+</html>

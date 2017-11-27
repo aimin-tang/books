@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Date Exercise</title>
+</head>
+<body>
+<script>
+    var date = new Date();
+    function getTime(h, m) {
+        return h + ":" + m;
+    }
+    // 25 Dec 2011 12:35
+    alert([date.getDate(), date.getMonth(), date.getFullYear(),
+        getTime(date.getHours(), date.getMinutes())].join(" "));
+</script>
+</body>
+</html>
