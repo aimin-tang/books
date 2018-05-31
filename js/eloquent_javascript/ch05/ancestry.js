@@ -1,4 +1,4 @@
-ancestry = [
+var ANCESTRY_FILE = JSON.stringify([
     {"name": "Carolus Haverbeke", "sex": "m", "born": 1832, "died": 1905, "father": "Carel Haverbeke", "mother": "Maria van Brussel"},
     {"name": "Emma de Milliano", "sex": "f", "born": 1876, "died": 1956, "father": "Petrus de Milliano", "mother": "Sophia van Damme"},
     {"name": "Maria de Rycke", "sex": "f", "born": 1683, "died": 1724, "father": "Frederik de Rycke", "mother": "Laurentia van Vlaenderen"},
@@ -38,16 +38,9 @@ ancestry = [
     {"name": "Anna van Hecke", "sex": "f", "born": 1607, "died": 1670, "father": "Paschasius van Hecke", "mother": "Martijntken Beelaert"},
     {"name": "Maria Sturm", "sex": "f", "born": 1835, "died": 1917, "father": "Charles Sturm", "mother": "Seraphina Spelier"},
     {"name": "Jacobus Bernardus van Brussel", "sex": "m", "born": 1736, "died": 1809, "father": "Jan van Brussel", "mother": "Elisabeth Haverbeke"}
-];
+])
 
-var byName = {};
-ancestry.forEach(function (entry) {
-    byName[entry.name] = entry;
-});
-
-function motherInArray(p) { return p.mother != null && p.mother in byName; }
-function ageDiffWithMother(p) { return p.born - byName[p.mother].born;}
-function sum(a, b) { return a + b; }
-
-var validEntries = ancestry.filter(motherInArray);
-console.log(validEntries.map(ageDiffWithMother).reduce(sum) / validEntries.length);
+// This makes sure the data is exported in node.js —
+// `require("./path/to/ancestry.js")` will get you the array.
+if (typeof module != "undefined" && module.exports)
+    module.exports = ANCESTRY_FILE;
