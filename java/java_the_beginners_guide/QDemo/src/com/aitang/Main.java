@@ -14,5 +14,14 @@ public class Main {
         r = testQueue.get();
         r = testQueue.get();
         System.out.println(r);
+
+        C c = new C();
+        C.x = 5;
+        System.out.println(c.x);
+    }
+
+    class C {
+        static int x;
     }
 }
+

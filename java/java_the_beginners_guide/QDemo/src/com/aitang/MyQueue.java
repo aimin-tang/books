@@ -2,9 +2,9 @@ package com.aitang;
 
 public class MyQueue {
     private Object[] my_queue;
-    int head;
-    int tail;
-    int size;
+    private int head;
+    private int tail;
+    private int size;
 
     public MyQueue(int size) {
         this.size = size;
